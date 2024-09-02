@@ -8,7 +8,7 @@ Introduction
 
 Task 1
 The first task was to create two ROS nodes, a publisher and a subscriber, that communicate with each other. The publisher node was responsible for generating messages and publishing them to a specific topic, while the subscriber node listened to this topic and processed the received messages.
-![Task 1](images/task1.png)
+![Task 1](https://github.com/asemqr/hello-robotics/blob/images/task1.png)
 Figure 1. Listener node
 
 Task 2
