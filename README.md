@@ -31,17 +31,28 @@ Task 4 Services
 For RPC (remote Procedure Call) we need services instead of publish/subscriber architecture. After testing out few services in the list of rosservice list, we modified turtle_listener.cpp to use /spwn service.
 Here we created a client for the /spawn service; defined the service message according to manual and made a function to call the service spawn for new turtles, using if statements (if (client1.call(srv1))->     ROS_INFO("Spawned turtle named %s at (%f, %f)", srv1.response.name.c_str(), srv1.request.x, srv1.request.y);
 ). There we added a few turtles as can be seen in Fig.4
-![Task 1](https://github.com/asemqr/hello-robotics/blob/images/task4.png)
+![Task 4](https://github.com/asemqr/hello-robotics/blob/images/task4.png)
 Figure 4. The spawned turtle
 
 Task 5
-In the final task we had to first, kill the turtle1 and spawn our own turtle named turtle_ at the center of the
-environment
-• Use service (teleport_absolute service) in order to put your turtle on one of
-the corners
-• Use topics to control the turtle, such that it moves in a square (from each
-corner to the next one) and in a triangular trajectory (from first corner move
-to the second, then to the third, and in diagonal to the first one again)
+In the final task we had to first, kill the turtle1 and spawn our own turtle named turtle_ at the center of the environment as shown in Fig 5-7.
 
+![Task 1](https://github.com/asemqr/hello-robotics/blob/images/task51.png)
+Figure 5
+
+![Task 1](https://github.com/asemqr/hello-robotics/blob/images/task52.png)
+Figure 6
+
+![Task 1](https://github.com/asemqr/hello-robotics/blob/images/task53.png)
+Figure 7
+
+Then we utilized service (teleport_absolute service) in order to move the turtle to one of
+the cornersand used topics to control the turtle, such that it moves in a square and triangle as shown in Fig 8-9.
+![Task 1](https://github.com/asemqr/hello-robotics/blob/images/task54.png)
+Figure 8
+
+![Task 1](https://github.com/asemqr/hello-robotics/blob/images/task55.png)
+Figure 9
+As well as video demonstration for Exercise 5
 [![Video Title](https://img.youtube.com/vi/aWIM5gjIf8/0.jpg)](https://youtu.be/jaWIM5gjIf8)
 
