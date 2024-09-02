@@ -35,7 +35,13 @@ Here we created a client for the /spawn service; defined the service message acc
 Figure 4. The spawned turtle
 
 Task 5
-
+In the final task we had to first, kill the turtle1 and spawn our own turtle named turtle_ at the center of the
+environment
+• Use service (teleport_absolute service) in order to put your turtle on one of
+the corners
+• Use topics to control the turtle, such that it moves in a square (from each
+corner to the next one) and in a triangular trajectory (from first corner move
+to the second, then to the third, and in diagonal to the first one again)
 
 [![Video Title](https://img.youtube.com/vi/aWIM5gjIf8/0.jpg)](https://youtu.be/jaWIM5gjIf8)
 
