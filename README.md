@@ -48,10 +48,10 @@ Figure 7
 
 Then we utilized service (teleport_absolute service) in order to move the turtle to one of
 the cornersand used topics to control the turtle, such that it moves in a square and triangle as shown in Fig 8-9.
-![Task 1](https://github.com/asemqr/hello-robotics/blob/images/task54.png)
+![Task 1](https://github.com/asemqr/hello-robotics/blob/images/task54.jpg)
 Figure 8
 
-![Task 1](https://github.com/asemqr/hello-robotics/blob/images/task55.png)
+![Task 1](https://github.com/asemqr/hello-robotics/blob/images/task55.jpg)
 Figure 9
 As well as video demonstration for Exercise 5
 [![Video Title](https://img.youtube.com/vi/aWIM5gjIf8/0.jpg)](https://youtu.be/jaWIM5gjIf8)
