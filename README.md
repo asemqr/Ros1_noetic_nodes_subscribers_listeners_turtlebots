@@ -13,19 +13,24 @@ Figure 1. Listener node
 
 Task 2
 The second task involved creating a ROS node that subscribes to the turtle1/pose topic in the turtlesim simulator and logs the turtle's position. This task aimed to deepen understanding of how to interact with ROS topics and how to interpret message structures.
-We created a subscriber node called turtle_listener.cpp file in the src directory of a new ROS package, turtlebot_controller. We also used ROS commands (rostopic info and rosmsg show) to explore the structure and type of the messages published on the /turtle1/pose topic. The node was programmed to log the turtle's position whenever a new message was received.
+We created a subscriber node called turtle_listener.cpp file in the src directory of a new ROS package, turtlebot_controller. We also used ROS commands (rostopic info and rosmsg show) to explore the structure and type of the messages published on the /turtle1/pose topic. The node was programmed to log the turtle's position whenever a new message was received(Fig.2).
 
 ![Task 2](https://github.com/asemqr/hello-robotics/blob/images/task2.png)
 Figure 2. Turtle sim listener node output
 
 Task 3
-In task 3 we modified  turtle_listener.cpp to control the turtle’s movement. We first started ROS Master, roscore and then looked at the list of verbose topics through rostopic list –v, after which we identified the command to set the velocities of the turtle, /turtle1/cmd_vel.  We need a message of the type of geometry_msgs/Twist, to be able to publish to this topic, where we set the linear.x and linear.y velocities, skipping linear.z as it is a planar simulator. To turn left or right, we also changed angular.z velocity. Since we already had a subscriber node that listened to the position of our turtle published by “turtle sim” node, we now needed to create a publisher node to send velocity commands suing type <geometry_msgs::Twist>  and ("turtle1/cmd_vel", 1) parameters. After recompiling using catkin_make and running the node again we got the output described in Fig.3
+In task 3, we modified  turtle_listener.cpp to control the turtle’s movement. We first started ROS Master, roscore and then looked at the list of verbose topics through rostopic list –v, after which we identified the command to set the velocities of the turtle, /turtle1/cmd_vel.  A message of the type of geometry_msgs/Twist, is needed to publish to this topic, so we created twist message in the call back function that will be called every time a new message is publisedon turtle1/pose topic. There we set the linear.x and linear.y velocities, to 1, skipping linear.z as it is a planar simulator. Next, we published the Twist message to the /turtle1/cmd_vel topic.
+
+To turn left or right, we also changed angular.z velocity. Since we already had a subscriber node that listened to the position of our turtle published by “turtle sim” node, we now needed to create a publisher node to send velocity commands using type <geometry_msgs::Twist>  and ("turtle1/cmd_vel", 1) parameters. 
+After recompiling using catkin_make and running the node again we got the output described in Fig.3
 
 ![Task 3](https://github.com/asemqr/hello-robotics/blob/images/task3.png)
 Figure 3. The turtle moving in circle
 
-Task 4
-
+Task 4 Services
+For RPC (remote Procedure Call) we need services instead of publish/subscriber architecture. After testing out few services in the list of rosservice list, we modified turtle_listener.cpp to use /spwn service.
+Here we created a client for the /spawn service; defined the service message according to manual and made a function to call the service spawn for new turtles, using if statements (if (client1.call(srv1))->     ROS_INFO("Spawned turtle named %s at (%f, %f)", srv1.response.name.c_str(), srv1.request.x, srv1.request.y);
+). There we added a few turtles as can be seen in Fig.4
 ![Task 1](https://github.com/asemqr/hello-robotics/blob/images/task4.png)
 Figure 4. The spawned turtle
 
